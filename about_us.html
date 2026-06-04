@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Nexus</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050505;
+    --card:#0d0d0d;
+    --border:rgba(255,255,255,.08);
+    --text:#ffffff;
+    --secondary:#a0a0a0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(180px);
+    z-index:-1;
+}
+
+body::before{
+    background:rgba(255,255,255,.06);
+    top:-200px;
+    left:-150px;
+}
+
+body::after{
+    background:rgba(255,255,255,.04);
+    bottom:-200px;
+    right:-150px;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:12px 22px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:rgba(255,255,255,.03);
+    margin-bottom:25px;
+    color:#d6d6d6;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,7rem);
+    font-weight:900;
+    line-height:.95;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:#7d7d7d;
+}
+
+.hero p{
+    margin-top:25px;
+    max-width:800px;
+    color:var(--secondary);
+    font-size:1.15rem;
+    line-height:1.9;
+}
+
+section{
+    padding:110px 0;
+}
+
+.title{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:var(--secondary);
+    max-width:750px;
+    line-height:1.9;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:30px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,255,255,.18);
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:1.3rem;
+}
+
+.card p{
+    color:var(--secondary);
+    line-height:1.8;
+}
+
+.standards{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.standard{
+    padding:18px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+}
+
+.team{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.member{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:30px;
+}
+
+.member h3{
+    margin-bottom:10px;
+}
+
+.role{
+    color:#cfcfcf;
+    margin-bottom:15px;
+}
+
+.member p{
+    color:var(--secondary);
+    line-height:1.7;
+}
+
+.quote{
+    margin-top:30px;
+    padding:25px;
+    border-left:3px solid rgba(255,255,255,.2);
+    color:#d0d0d0;
+    font-style:italic;
+}
+
+.footer{
+    text-align:center;
+    padding:80px 20px;
+    border-top:1px solid var(--border);
+}
+
+.footer h2{
+    margin-bottom:15px;
+}
+
+.footer p{
+    color:var(--secondary);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<section class="hero">
+
+<div>
+
+<div class="badge">
+🚀 Open Source • Engineering • Innovation
+</div>
+
+<h1>
+Building The Future<br>
+<span>Through Code.</span>
+</h1>
+
+<p>
+Project Nexus is a modern learning initiative designed to help developers transform ideas into production-ready solutions. From foundational programming concepts to advanced software engineering principles, every project is crafted to deliver practical experience, technical growth, and real-world problem-solving skills.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">🎯 Mission</h2>
+
+<p class="subtitle">
+To create a high-quality ecosystem where aspiring developers can learn, build, experiment, and master modern software development through practical, industry-inspired projects.
+</p>
+
+</section>
+
+<section>
+
+<h2 class="title">🧠 Learning Path</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🌱 Foundation Engineering</h3>
+<p>
+Master the fundamentals of modern development through HTML5, CSS3, JavaScript, and Python. Build strong problem-solving skills, understand programming logic, learn debugging techniques, version control, and software engineering best practices while creating real-world projects from the ground up.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Growth & Development</h3>
+<p>
+Develop responsive web applications, integrate APIs, manage data efficiently, and create modern user experiences while gaining practical exposure to professional development workflows and scalable project structures.
+</p>
+</div>
+
+<div class="card">
+<h3>⚡ Engineering Excellence</h3>
+<p>
+Master advanced software architecture, performance optimization, scalable systems, clean code principles, and production-level development methodologies used by modern engineering teams.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">🛡️ Engineering Standards</h2>
+
+<div class="standards">
+<div class="standard">✓ Clean Architecture</div>
+<div class="standard">✓ Maintainable & Readable Code</div>
+<div class="standard">✓ Performance-Focused Development</div>
+<div class="standard">✓ Security-Conscious Implementation</div>
+<div class="standard">✓ Industry-Level Practices</div>
+<div class="standard">✓ Continuous Learning & Improvement</div>
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">💡 Why This Project Exists</h2>
+
+<p class="subtitle">
+Many aspiring developers struggle because most learning resources focus heavily on theory while providing limited real-world implementation experience. This project bridges that gap through practical learning, real-world projects, professional engineering practices, and structured skill progression.
+</p>
+
+</section>
+
+<section>
+
+<h2 class="title">👥 Leadership & Contributors</h2>
+
+<div class="team">
+
+<div class="member">
+<h3>💡 itznotsahil</h3>
+<div class="role">Founder & Project Vision</div>
+<p>
+Leading the direction, strategy, and long-term vision of the project while defining the roadmap for future growth.
+</p>
+</div>
+
+<div class="member">
+<h3>🤝 nihilanthrope</h3>
+<div class="role">Core Partner</div>
+<p>
+Contributing ideas, collaboration, technical discussions, and development support.
+</p>
+</div>
+
+<div class="member">
+<h3>⚡ calmcanbe-coder</h3>
+<div class="role">Core Partner</div>
+<p>
+Focused on implementation, innovation, technical development, and continuous improvement.
+</p>
+</div>
+
+<div class="member">
+<h3>🔥 whoravyn</h3>
+<div class="role">Core Partner</div>
+<p>
+Helping shape creative solutions, project evolution, and future possibilities.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">🌍 Vision</h2>
+
+<p class="subtitle">
+Our vision is to build a platform where developers learn by creating, grow through experimentation, and contribute to a community driven by knowledge, creativity, and engineering excellence.
+</p>
+
+<div class="quote">
+"Technology changes the world when ideas are transformed into solutions. Every great engineer begins with curiosity, grows through practice, and succeeds through persistence."
+</div>
+
+</section>
+
+</div>
+
+<div class="footer">
+<h2>Code • Create • Innovate • Repeat</h2>
+<p>
+Founded by itznotsahil • Powered by nihilanthrope • calmcanbe-coder • whoravyn
+</p>
+</div>
+
+</body>
+</html>
+</head>
+
+<body>
+  
+</body>
+
+</html>
