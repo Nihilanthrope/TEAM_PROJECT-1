@@ -1,33 +1,288 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Nexus | Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
+    overflow:hidden;
+    color:white;
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:white;
+    opacity:.05;
+    border-radius:50%;
+    filter:blur(180px);
+    top:-200px;
+    left:-100px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:white;
+    opacity:.03;
+    border-radius:50%;
+    filter:blur(180px);
+    bottom:-200px;
+    right:-100px;
+}
+
+/* Login Box */
+
+.login-box{
+    width:420px;
+    max-width:90%;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    padding:40px;
+    border-radius:30px;
+    position:relative;
+    z-index:10;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    font-size:2.2rem;
+    font-weight:800;
+}
+
+.logo p{
+    color:#9e9e9e;
+    margin-top:8px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#d0d0d0;
+    font-size:14px;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    color:white;
+    outline:none;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:rgba(255,255,255,0.25);
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0 25px;
+    font-size:14px;
+}
+
+.options a{
+    color:#bdbdbd;
+    text-decoration:none;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    color:black;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0;
+    color:#777;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    width:40%;
+    height:1px;
+    background:rgba(255,255,255,0.08);
+    top:50%;
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+.socials{
+    display:grid;
+    gap:12px;
+}
+
+.social-btn{
+    padding:14px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.08);
+    background:#0d0d0d;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social-btn:hover{
+    border-color:rgba(255,255,255,0.2);
+}
+
+.signup{
+    text-align:center;
+    margin-top:25px;
+    color:#8f8f8f;
+}
+
+.signup a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size:12px;
+    color:#8a8a8a;
+}
+
+</style>
 </head>
 <body>
 
-    <main>
-        <h1>Welcome Back</h1>
-        <p>Sign in to continue.</p>
+<div class="login-box">
 
-        <form action="index.html">
-            <label>Email</label><br>
-            <input type="email" placeholder="Enter your email" required>
-            <br><br>
+<div class="badge">PROJECT NEXUS</div>
 
-            <label>Password</label><br>
-            <input type="password" placeholder="Enter your password" required>
-            <br><br>
+<div class="logo">
+<h1>Welcome Back 👋</h1>
+<p>Login to continue your development journey.</p>
+</div>
 
-            <button type="submit">Sign In</button>
-        </form>
+<form>
 
-        <p>
-            Don't have an account?
-            <a href="signup.html">Create Account</a>
-        </p>
-    </main>
+<div class="input-group">
+<label>Email Address</label>
+<input type="email" placeholder="you@example.com">
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" placeholder="••••••••••">
+</div>
+
+<div class="options">
+<label>
+<input type="checkbox">
+ Remember me
+</label>
+
+<a href="#">Forgot Password?</a>
+</div>
+
+<button class="login-btn">
+Sign In
+</button>
+
+</form>
+
+<div class="divider">
+OR
+</div>
+
+<div class="socials">
+
+<button class="social-btn">
+🐙 Continue with GitHub
+</button>
+
+<button class="social-btn">
+🔵 Continue with Discord
+</button>
+
+<button class="social-btn">
+🔍 Continue with Google
+</button>
+
+</div>
+
+<div class="signup">
+Don't have an account?
+<a href="#">Create Account</a>
+</div>
+
+</div>
 
 </body>
+</html>
+</head>
+
+<body>
+  
+</body>
+
 </html>

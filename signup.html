@@ -5,47 +5,402 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-</head>
-
-<body>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Nexus • Authentication</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at top left,#161616,#050505 50%);
+overflow:hidden;
+color:white;
+position:relative;
+}
+
+/* Animated Grid */
+
+body::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:0;
+}
+
+/* Glow Effects */
+
+.glow1,.glow2{
+position:absolute;
+border-radius:50%;
+filter:blur(160px);
+}
+
+.glow1{
+width:400px;
+height:400px;
+background:rgba(255,255,255,.08);
+top:-100px;
+left:-100px;
+}
+
+.glow2{
+width:350px;
+height:350px;
+background:rgba(255,255,255,.05);
+bottom:-100px;
+right:-100px;
+}
+
+/* Particles */
+
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:.35;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+
+/* Main Card */
+
+.auth-card{
+width:460px;
+max-width:92%;
+padding:40px;
+border-radius:32px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(25px);
+position:relative;
+z-index:10;
+}
+
+.brand{
+font-size:12px;
+letter-spacing:4px;
+color:#9d9d9d;
+margin-bottom:25px;
+text-transform:uppercase;
+}
+
+h1{
+font-size:3rem;
+font-weight:900;
+line-height:1;
+margin-bottom:12px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#bdbdbd,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+color:#9d9d9d;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+/* Tabs */
+
+.tabs{
+display:flex;
+background:#0d0d0d;
+border-radius:14px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.tab{
+flex:1;
+padding:14px;
+text-align:center;
+cursor:pointer;
+color:#8d8d8d;
+}
+
+.active{
+background:white;
+color:black;
+font-weight:700;
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:16px;
+}
+
+.input-group input{
+width:100%;
+padding:16px;
+border-radius:14px;
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,.08);
+color:white;
+outline:none;
+}
+
+.input-group input:focus{
+border-color:rgba(255,255,255,.25);
+}
+
+.main-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+font-weight:700;
+cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#d7d7d7
+);
+
+color:black;
+
+box-shadow:
+0 0 40px rgba(255,255,255,.15);
+}
+
+.divider{
+text-align:center;
+margin:25px 0;
+color:#777;
+}
+
+/* Social Buttons */
+
+.socials{
+display:grid;
+gap:12px;
+}
+
+.social-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+padding:14px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.08);
+background:#0d0d0d;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.social-btn:hover{
+transform:translateY(-2px);
+border-color:rgba(255,255,255,.2);
+}
+
+.social-btn img{
+width:20px;
+height:20px;
+}
+
+/* Stats */
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin-top:30px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.stats h3{
+font-size:1.3rem;
+}
+
+.stats p{
+color:#8d8d8d;
+font-size:.85rem;
+}
+
+/* Achievement */
+
+.achievement{
+position:absolute;
+right:-140px;
+top:80px;
+width:180px;
+padding:18px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:20px;
+font-size:.9rem;
+line-height:1.6;
+}
+
+/* Footer Quote */
+
+.quote{
+text-align:center;
+margin-top:25px;
+color:#7d7d7d;
+font-size:.9rem;
+}
+
+@media(max-width:768px){
+
+.achievement{
+display:none;
+}
+
+h1{
+font-size:2.4rem;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-    <main>
-        <h1>Create Account</h1>
-        <p>Join us today.</p>
+<div class="glow1"></div>
+<div class="glow2"></div>
 
-        <form action="index.html">
-            <label>Full Name</label><br>
-            <input type="text" placeholder="Enter your name" required>
-            <br><br>
+<div class="particle" style="left:10%;top:90%"></div>
+<div class="particle" style="left:25%;top:80%"></div>
+<div class="particle" style="left:40%;top:95%"></div>
+<div class="particle" style="left:65%;top:85%"></div>
+<div class="particle" style="left:85%;top:92%"></div>
 
-            <label>Email</label><br>
-            <input type="email" placeholder="Enter your email" required>
-            <br><br>
+<div class="achievement">
+🏆 Elite Engineer
+<br>
+Top Community Members
+</div>
 
-            <label>Password</label><br>
-            <input type="password" placeholder="Create a password" required>
-            <br><br>
+<div class="auth-card">
 
-            <button type="submit">Create Account</button>
-        </form>
+<div class="brand">
+PROJECT NEXUS
+</div>
 
-        <p>
-            Already have an account?
-            <a href="login.html">Sign In</a>
-            
-        </p>
-    </main>
+<h1>Welcome Back</h1>
+
+<p class="subtitle">
+Login or create an account to continue your development journey.
+</p>
+
+<div class="tabs">
+<div class="tab active">Login</div>
+<div class="tab">Signup</div>
+</div>
+
+<form>
+
+<div class="input-group">
+<input type="email" placeholder="Email Address">
+</div>
+
+<div class="input-group">
+<input type="password" placeholder="Password">
+</div>
+
+<button class="main-btn">
+Sign In
+</button>
+
+</form>
+
+<div class="divider">OR CONTINUE WITH</div>
+
+<div class="socials">
+
+<button class="social-btn">
+<img src="https://cdn.simpleicons.org/github/white">
+GitHub
+</button>
+
+<button class="social-btn">
+<img src="https://cdn.simpleicons.org/discord/5865F2">
+Discord
+</button>
+
+<button class="social-btn">
+<img src="https://cdn.simpleicons.org/google/white">
+Google
+</button>
+
+<button class="social-btn">
+<img src="https://cdn.simpleicons.org/apple/white">
+Apple
+</button>
+
+</div>
+
+<div class="stats">
+
+<div>
+<h3>1K+</h3>
+<p>Developers</p>
+</div>
+
+<div>
+<h3>150+</h3>
+<p>Projects</p>
+</div>
+
+<div>
+<h3>25K+</h3>
+<p>Contributions</p>
+</div>
+
+</div>
+
+<p class="quote">
+"Great engineers don't just write code. They build the future."
+</p>
+
+</div>
 
 </body>
 </html>
+</head>
+
+<body>
+  
 </body>
 
 </html>
