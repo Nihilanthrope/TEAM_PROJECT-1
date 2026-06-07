@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Laboratory</title>
+  <title>Your Title Here</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -50,7 +50,42 @@
       line-height: 1.7;
       min-height: 100vh;
       overflow-x: hidden;
-      cursor: auto;
+      cursor: none;
+    }
+
+    /* ── CUSTOM CURSOR ──────────────────────────────────────────── */
+    #cursor-dot,
+    #cursor-ring {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+    }
+    #cursor-dot {
+      width: 6px; height: 6px;
+      background: var(--white);
+    }
+    #cursor-ring {
+      width: 32px; height: 32px;
+      border: 1px solid var(--grey-1);
+      transition: width 0.2s, height 0.2s, border-color 0.2s;
+    }
+    body:has(a:hover) #cursor-ring,
+    body:has(button:hover) #cursor-ring {
+      width: 48px; height: 48px;
+      border-color: var(--white);
+    }
+
+    /* ── NOISE OVERLAY ──────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 1;
     }
 
     /* ── SCROLLBAR ──────────────────────────────────────────────── */
@@ -160,7 +195,7 @@
       border-radius: var(--radius-sm);
       color: var(--grey-3);
       background: transparent;
-      cursor: pointer;
+      cursor: none;
       transition: background var(--transition), color var(--transition), border-color var(--transition);
     }
 
@@ -279,7 +314,7 @@
       padding: 0.85rem 2rem;
       border-radius: var(--radius-sm);
       border: none;
-      cursor: pointer;
+      cursor: none;
       transition: all var(--transition);
       position: relative;
       overflow: hidden;
@@ -753,219 +788,4 @@
     }
 
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── RESPONSIVE ─────────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .split-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .split-visual { aspect-ratio: 16 / 9; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .card.tall { grid-row: span 1; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .footer-top { grid-template-columns: 1fr; }
-      .hero-stat-row { gap: 2rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ── NAV ─────────────────────────────────────────────────── -->
-  <nav>
-    <div class="container inner">
-      <span class="nav-logo">PROJECT LABORATORY</span>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-      </ul>
-      <a href="#cta" class="nav-cta">Get Started</a>
-    </div>
-  </nav>
-
-  <!-- ── HERO ────────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-lines"></div>
-    <div class="container hero-content">
-      <div class="hero-eyebrow">
-        <span class="label">Welcome to the future</span>
-      </div>
-      <h1 class="hero-headline">
-        Craft Your<br>
-        <span class="line-2">Vision Here</span>
-      </h1>
-      <p class="hero-sub">
-        A vibe space for newbie coders tryna get into tech. No stress, no boring lectures—just straight-up learning, building small projects, and leveling up step by step. Start from zero, stack your skills, and join hundreds of other juniors leveling up together.
-      </p>
-      <div class="hero-actions">
-        <a href="#cta" class="btn btn-primary">
-          KICK OFF
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7v10"/>
-          </svg>
-        </a>
-        <a href="#features" class="btn btn-outline">Learn More</a>
-      </div>
-      <div class="hero-stat-row">
-        <div class="stat-item">
-          <div class="num">1K+</div>
-          <div class="desc">Active Users</div>
-        </div>
-        <div class="stat-item">
-          <div class="num">78.8%</div>
-          <div class="desc">Uptime</div>
-        </div>
-        <div class="stat-item">
-          <div class="num">4.3★</div>
-          <div class="desc">Avg Rating</div>
-        </div>
-        <div class="stat-item">
-          <div class="num">48h</div>
-          <div class="desc">Support Response</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ── MARQUEE ──────────────────────────────────────────────── -->
-  <div class="marquee-band">
-    <div class="marquee-track">
-      <span>DESIGN</span><span class="dot">●</span>
-      <span>DEVELOP</span><span class="dot">●</span>
-      <span>DEPLOY</span><span class="dot">●</span>
-      <span>SCALE</span><span class="dot">●</span>
-      <span>INNOVATE</span><span class="dot">●</span>
-      <span>CREATE</span><span class="dot">●</span>
-      <span>INSPIRE</span><span class="dot">●</span>
-      <span>BUILD</span><span class="dot">●</span>
-      <!-- Duplicate for seamless loop -->
-      <span>DESIGN</span><span class="dot">●</span>
-      <span>DEVELOP</span><span class="dot">●</span>
-      <span>DEPLOY</span><span class="dot">●</span>
-      <span>SCALE</span><span class="dot">●</span>
-      <span>INNOVATE</span><span class="dot">●</span>
-      <span>CREATE</span><span class="dot">●</span>
-      <span>INSPIRE</span><span class="dot">●</span>
-      <span>BUILD</span><span class="dot">●</span>
-    </div>
-  </div>
-
-  <!-- ── FEATURES ─────────────────────────────────────────────── -->
- <style>
-.feature-icon {
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.feature-icon img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  display: block;
-}
-</style>
-
-<section id="features">
-  <div class="container">
-
-    <div class="section-header reveal">
-      <div class="label">We Teach</div>
-      <h2>Everything You Need</h2>
-    </div>
-
-    <div class="features-grid">
-
-      <!-- Python -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
-        </div>
-        <h4>Python</h4>
-        <p>We teach Python from zero to solid basics—variables, loops, functions, and mini projects.</p>
-      </div>
-
-      <!-- HTML -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
-        </div>
-        <h4>HTML</h4>
-        <p>Learn how to structure websites from scratch using clean and simple HTML.</p>
-      </div>
-
-      <!-- CSS -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">
-        </div>
-        <h4>CSS Styling</h4>
-        <p>Make your websites look modern, aesthetic, and responsive across all devices.</p>
-      </div>
-
-      <!-- JavaScript -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
-        </div>
-        <h4>JavaScript</h4>
-        <p>Add interactivity, logic, and real functionality to your websites.</p>
-      </div>
-
-      <!-- Projects -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Projects">
-        </div>
-        <h4>Projects</h4>
-        <p>Build real-world beginner projects to actually level up your skills.</p>
-      </div>
-
-      <!-- C++ -->
-      <div class="feature-card reveal">
-        <div class="feature-icon">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">
-        </div>
-        <h4>C++ Basics</h4>
-        <p>Master the fundamentals of C++ including data structures and algorithms.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
+      from { opacity: 0; transform: translate
