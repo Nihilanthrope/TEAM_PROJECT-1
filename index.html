@@ -902,6 +902,7 @@
       <span>CREATE</span><span class="dot">●</span>
       <span>INSPIRE</span><span class="dot">●</span>
       <span>BUILD</span><span class="dot">●</span>
+      <!-- Duplicate for seamless loop -->
       <span>DESIGN</span><span class="dot">●</span>
       <span>DEVELOP</span><span class="dot">●</span>
       <span>DEPLOY</span><span class="dot">●</span>
@@ -914,91 +915,96 @@
   </div>
 
   <!-- ── FEATURES ─────────────────────────────────────────────── -->
-  <section id="features">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="label">We Teach</div>
-        <h2>Everything You Need</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" style="width: 38px; height: 38px;">
-          </div>
-          <h4>Python</h4>
-          <p>We teach Python from zero to solid basics—variables, loops, functions, and mini projects.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML" style="width: 38px; height: 38px;">
-          </div>
-          <h4>HTML</h4>
-          <p>Learn how to structure websites from scratch using clean and simple HTML.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" style="width: 38px; height: 38px;">
-          </div>
-          <h4>CSS Styling</h4>
-          <p>Make your websites look modern, aesthetic, and responsive across all devices.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 38px; height: 38px;">
-          </div>
-          <h4>JavaScript</h4>
-          <p>Add interactivity, logic, and real functionality to your websites.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+ <style>
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
 
-  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="nav-logo">PROJECT LABORATORY</span>
-          <p>Learning hub for newbie developers. Build, learn, level up.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Product</h5>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#work">Projects</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="cookies.html">Cookies</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Project Laboratory. All rights reserved.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link" title="Twitter">𝕏</a>
-          <a href="#" class="social-link" title="GitHub">GH</a>
-          <a href="#" class="social-link" title="Discord">DC</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+.feature-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+</style>
 
-  <!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
-  <script src="script.js"></script>
+<section id="features">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div class="label">We Teach</div>
+      <h2>Everything You Need</h2>
+    </div>
+
+    <div class="features-grid">
+
+      <!-- Python -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python">
+        </div>
+        <h4>Python</h4>
+        <p>We teach Python from zero to solid basics—variables, loops, functions, and mini projects.</p>
+      </div>
+
+      <!-- HTML -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML">
+        </div>
+        <h4>HTML</h4>
+        <p>Learn how to structure websites from scratch using clean and simple HTML.</p>
+      </div>
+
+      <!-- CSS -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS">
+        </div>
+        <h4>CSS Styling</h4>
+        <p>Make your websites look modern, aesthetic, and responsive across all devices.</p>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript">
+        </div>
+        <h4>JavaScript</h4>
+        <p>Add interactivity, logic, and real functionality to your websites.</p>
+      </div>
+
+      <!-- Projects -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Projects">
+        </div>
+        <h4>Projects</h4>
+        <p>Build real-world beginner projects to actually level up your skills.</p>
+      </div>
+
+      <!-- C++ -->
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        </div>
+        <h4>C++ Basics</h4>
+        <p>Master the fundamentals of C++ including data structures and algorithms.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
