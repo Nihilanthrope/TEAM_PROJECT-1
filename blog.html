@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README | Project Laboratory</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0a0a0a;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:0 10%;
+    background:
+    radial-gradient(circle at top,#1b1b1b 0%,#0a0a0a 60%);
+}
+
+.hero h1{
+    font-size:5rem;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    color:#9f9f9f;
+    font-size:1.15rem;
+    line-height:1.9;
+}
+
+.hero a{
+    margin-top:40px;
+    display:inline-block;
+    padding:15px 35px;
+    text-decoration:none;
+    color:#000;
+    background:#fff;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.hero a:hover{
+    transform:translateY(-3px);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section{
+    padding:120px 0;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:2px;
+    background:#fff;
+    left:0;
+    bottom:-10px;
+}
+
+.section-text{
+    color:#a8a8a8;
+    max-width:850px;
+    line-height:2;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    padding:35px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#555;
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:1.2rem;
+}
+
+.card p{
+    color:#9d9d9d;
+    line-height:1.8;
+}
+
+.status{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:50px;
+}
+
+.status-box{
+    background:#111;
+    border:1px solid #222;
+    padding:22px;
+    border-radius:15px;
+    color:#d9d9d9;
+}
+
+.quote{
+    background:#111;
+    border-left:4px solid #fff;
+    padding:40px;
+    margin-top:40px;
+    border-radius:15px;
+}
+
+.quote p{
+    color:#d4d4d4;
+    font-size:1.1rem;
+    line-height:2;
+}
+
+.footer{
+    border-top:1px solid #222;
+    padding:50px 10%;
+    text-align:center;
+}
+
+.footer h2{
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
+
+.footer p{
+    color:#8c8c8c;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+    <h1>PROJECT LABORATORY</h1>
+
+    <p>
+        Where Innovation Meets Execution.
+        A dedicated space for creating, experimenting, and building meaningful
+        digital experiences through creativity, technology, and continuous growth.
+    </p>
+
+    <a href="#about">Explore</a>
+
+</section>
+
+<div class="container">
+
+<section class="section" id="about">
+
+    <h2 class="section-title">About Project</h2>
+
+    <p class="section-text">
+        Project Laboratory is an independent development initiative focused on
+        transforming ideas into impactful digital projects. It serves as a place
+        for experimentation, innovation, learning, and building modern solutions
+        with a strong emphasis on quality, creativity, and long-term growth.
+    </p>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">Focus Areas</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💻 Development</h3>
+            <p>
+                Creating modern websites, applications, and digital solutions
+                designed for performance and usability.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Engineering</h3>
+            <p>
+                Building structured systems and solving complex challenges
+                through efficient development practices.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Design</h3>
+            <p>
+                Crafting clean interfaces and intuitive experiences that
+                connect technology with people.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Innovation</h3>
+            <p>
+                Exploring new ideas, technologies, and opportunities to
+                continuously improve every project.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">Development Status</h2>
+
+    <div class="status">
+
+        <div class="status-box">✓ Homepage Completed</div>
+        <div class="status-box">✓ About Page Completed</div>
+        <div class="status-box">✓ Blog Section Added</div>
+        <div class="status-box">✓ Contact Page Added</div>
+        <div class="status-box">✓ Privacy Policy Added</div>
+        <div class="status-box">✓ Terms & Conditions Added</div>
+        <div class="status-box">✓ Documentation Added</div>
+        <div class="status-box">⟳ Continuous Improvements</div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">Mission</h2>
+
+    <div class="quote">
+
+        <p>
+            "To create meaningful digital experiences, encourage innovation,
+            and build projects that inspire creativity, learning,
+            experimentation, and continuous improvement."
+        </p>
+
+    </div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+
+    <h2>PROJECT LABORATORY</h2>
+
+    <p>Building The Future, One Project At A Time.</p>
+
+    <br>
+
+    <p>© 2026 Project Laboratory. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
+</body>
+
+</html>
